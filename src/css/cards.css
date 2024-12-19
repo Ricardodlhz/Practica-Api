@@ -1,8 +1,26 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 .cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
     width: 60%;
-    background-color: white;
+   
 }
 
-.cards{
-    width: 300px;
+.imagen{
+    width: 70%;
+    border-radius: 0.3rem;
+}
+.titulo{
+    font-size: 2rem;
+    font-family: Raleway;
+}
+
+.texto{
+    font-size: 1.5rem;
 }

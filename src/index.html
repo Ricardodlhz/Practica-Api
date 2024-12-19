@@ -12,32 +12,35 @@
     <link rel="shortcut icon" href="./assets/images/favicoin.png" type="image/x-icon">
     <title>Eventos</title>
 </head>
-<body class="bg-[#070A1B]   gap-8">
+<body class="bg-[#070A1B] gap-8 ">
     <!-- Header -->
-    <header class="mt-6 flex items-center justify-evenly">
+    <header class=" flex items-center justify-evenly fixed w-full top-0 bg-[#070A1B] h-[100px]">
         <h1 class="text-white font-[Raleway] text-3xl hover:cursor-pointer">Tickets Events</h1>
 
         <div class="links flex gap-20">
             <a href="#" class="text-white text-xl hover:scale-110 duration-300">Comprar Entradas</a>
-            <p class="text-white text-xl hover:cursor-pointer hover:scale-110 duration-300" id="llamarModal">Conciertos</p>
+            <a href="#conciertos" class="text-white text-xl  hover:scale-110 duration-300" >Conciertos</a>
             <a href="#" class="text-white text-xl hover:scale-110 duration-300">Eventos</a>
-            <a href="#" class="text-white text-xl hover:scale-110 duration-300">Deportes</a>
+            <a href="#deportes" class="text-white text-xl hover:scale-110 duration-300">Deportes</a>
         </div>
 
         <div class="icons flex gap-10">
-            <i class="fa-solid fa-magnifying-glass text-white text-lg hover:scale-110 duration-300 hover:cursor-pointer"></i>
+            <i class="fa-solid fa-magnifying-glass text-white text-lg hover:scale-110 duration-300 hover:cursor-pointer" id="llamarModal"></i>
             <i class="fa-regular fa-user text-white text-lg hover:scale-110 duration-300 hover:cursor-pointer"></i>
         </div>
     </header>
-
     <!-- Main -->
-    <main class="container mx-auto border border-yellow-600 flex flex-col items-center justify-center" id="main">
+    <main class="container mx-auto mt-32 " >
+        <h2 class="titulo text-white"id="conciertos" >Conciertos</h2>
+        <div class="mx-auto  flex flex-col items-center justify-center gap-10" id="containerConciertos"></div>
+        <h2 class="titulo text-white"id="deportes" >Deportes</h2>
+        <div class="mx-auto  flex flex-col items-center justify-center gap-10" id="containerDeportes"></div>
         
     </main>
 
     <!-- Footer -->
-    <footer class="footer border border-green-400 ">
-
+    <footer class="footer border border-green-400 " >
+                
     </footer>
 </body>
 
