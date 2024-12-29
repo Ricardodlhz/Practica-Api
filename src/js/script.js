@@ -2,6 +2,7 @@
 const ticketMasterApiKey="T6MA2HQ4qpcEsWlYWKr8MR3Ux9mDOMQ4"
 //Vars
 let llamarModal=document.getElementById("llamarModal")
+let ventanaModal=document.getElementById("modal")
 let main=document.getElementById("containerConciertos")
 let img=document.getElementById("img")
 //Take images by id
@@ -95,10 +96,13 @@ const listarEventoArtista=async(event)=>{
     }
 }
 //Función para hacer aparecer la ventana modal
-const ventanaModal=(event)=>{
-
+const llamarventanaModal=(event)=>{
+    if(event.target.nodeName=="I"){
+        console.log("Hiciste click en la lupa")
+        ventanaModal.style.display="flex"
+    }
 }
 
 //Listeners
 document.addEventListener("DOMContentLoaded",listarEventosIndex)
-llamarModal.addEventListener("click",ventanaModal)
+llamarModal.addEventListener("click",llamarventanaModal)
