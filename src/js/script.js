@@ -4,6 +4,9 @@ const ticketMasterApiKey="T6MA2HQ4qpcEsWlYWKr8MR3Ux9mDOMQ4"
 let llamarModal=document.getElementById("llamarModal")
 let ventanaModal=document.getElementById("modal")
 let main=document.getElementById("containerConciertos")
+let valueArtista=document.getElementById("nombreArtista")
+let enviar=document.getElementById("enviar")
+let cerrar=document.getElementById("cerrar")
 let img=document.getElementById("img")
 //Take images by id
 // const api=await fetch("https://app.ticketmaster.com/discovery/v2/events/Z698xZ8KZ17uko9/images?apikey="+ticketMasterApiKey)
@@ -103,6 +106,23 @@ const llamarventanaModal=(event)=>{
     }
 }
 
+/*Funcion para cerrar la ventana modal */
+const cerrarModal=(event)=>{
+    if(event.target.nodeName=="BUTTON"){
+        ventanaModal.style.display="none"
+    }
+}
+
+//Guardamos en el localStorage el artista buscando para posteriormente recogerlo en la página que vamos a acceder
+const buscarArtista=(event)=>{
+    let nomArtista=valueArtista.value
+    if(event.target.nodeName=="BUTTON"){
+        localStorage.setItem("artista",JSON.stringify(nomArtista))
+    }
+   
+}
 //Listeners
 document.addEventListener("DOMContentLoaded",listarEventosIndex)
 llamarModal.addEventListener("click",llamarventanaModal)
+cerrar.addEventListener("click",cerrarModal)
+enviar.addEventListener("click",buscarArtista)

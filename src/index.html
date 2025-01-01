@@ -34,13 +34,19 @@
 
     <!-- Ventana Modal -->
 
-    <div class="relative w-[90%] top-32 left-4 sm:w-[90%] sm:top-32 sm:left-[50px] md:w-[80%] md:top-32 md:left-[150px] lg:w-[60%]  lg:top-32 lg:left-[300px] xl:w-[60%] xl:left-[400px] bg-[#0f173a]  rounded-lg hidden justify-center items-center flex-col h-[200px]" id="modal">
+    <div class="relative hidden w-[90%] top-32 left-4 sm:w-[90%] sm:top-32 sm:left-[50px] md:w-[80%] md:top-32 md:left-[150px] lg:w-[60%]  lg:top-32 lg:left-[300px] xl:w-[700px] xl:left-[600px] bg-[#0f173a]  rounded-lg  justify-center items-center flex-col h-[200px]" id="modal">
         <h2 class="titulo text-white">¿Que artista quieres buscar?</h2>
+       <form action="./pages/artistas.html">
         <div class="flex flex-col">
             <label for="nombreArtista" class="text-white">Dime el nombre del artista que quieres buscar.</label>
-            <input type="text" id="nombreArtista" class="w-60 hover:cursor-pointer">
+            <input type="text" id="nombreArtista" class="w-60 hover:cursor-pointer" required>
         </div>
-
+       
+        <div class="buttons">
+            <button type="submit" id="enviar" class="bg-white rounded-lg p-2  mt-2">Enviar</button>
+        <button type="submit" id="cerrar" class="bg-white rounded-lg p-2  mt-2">Cerrar</button>
+        </div>
+       </form>
 </div>
     <!-- Main -->
     <main class="container mx-auto  " >
