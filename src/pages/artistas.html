@@ -6,16 +6,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./output.css">
-    <link rel="stylesheet" href="./css/cards.css">
+    <link rel="stylesheet" href="./../output.css">
+    <link rel="stylesheet" href="./../css/cards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <link rel="shortcut icon" href="./assets/images/favicoin.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./../assets/images/favicoin.png" type="image/x-icon">
     <title>Eventos</title>
 </head>
 <body class="bg-[#070A1B] gap-8 ">
     <!-- Header -->
     <header class=" flex items-center justify-evenly  w-full bg-[#070A1B] h-[100px] ">
-        <h1 class="text-white font-[Raleway] text-3xl hover:cursor-pointer">Tickets Events</h1>
+        <a href="./../index.html"><h1 class="text-white font-[Raleway] text-3xl hover:cursor-pointer">Tickets Events</h1></a>
 
         <div class=" hidden lg:flex gap-20">
             <a href="#" class="text-white text-xl hover:scale-110 duration-300">Comprar Entradas</a>
@@ -35,11 +35,11 @@
    
     <!-- Main -->
     <main class="container mx-auto  " >
-        <div class="flex"> 
-            <h2 class="titulo text-white"id="conciertos" >Aquí Tienes la informacion del artista</h2>
+        <div class="flex gap-2 flex-wrap p"> 
+            <h2 class="titulo text-white sm:text-nowra"id="conciertos" >Aquí tienes la informacion del artista</h2>
             <h2 class="titulo text-white" id="tituloArtista"></h2>
         </div>
-        <div class="mx-auto  flex flex-col items-center justify-center gap-10" id="containerConciertos"></div>
+        <div class="mx-auto   flex  flex-wrap items-center justify-center gap-10" id="containerInformacion"></div>
         
     </main>
 
@@ -85,5 +85,5 @@
     
 </body>
 
-<script src="./js/script.js"></script>
+<script src="./../js/scriptArtistas.js"></script>
 </html>

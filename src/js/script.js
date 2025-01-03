@@ -20,12 +20,7 @@ const peticionApiTicketMasterArtista=async(nombreArtista)=>{
     const data=await api.json()
     return data
 }
-//Funcion que nos devuelve información de la api de Itunes.
-const peticionItunes=async(nombreArtista)=>{
-    const api=await fetch(" https://itunes.apple.com/search?term="+nombreArtista)
-    const data =await api.json()
-    return data
-}
+
 
 //Funcion para recoger la información de los eventos que se van a dar en Madrid de la segunda página.
 const peticionApiTicketMasterGeneral=async()=>{
