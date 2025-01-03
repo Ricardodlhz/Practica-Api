@@ -18,13 +18,14 @@ const cargartituloArtista=async()=>{
   
     for (let index = 0; index < 12; index++) {
         let newDiv=document.createElement("DIV")
-        newDiv.classList.add("flex","items-center","flex-col","justify-center","gap-4")
+        newDiv.classList.add("flex","items-center","flex-col","justify-end","gap-4","w-[300px]","h-[300px]")
         let newTitulo=document.createElement("H2")
+        newTitulo.classList.add("text-center")
         let newAudio=document.createElement("AUDIO")
         let newImg=document.createElement("IMG")
         newImg.classList.add("w-[150px]")
         newAudio.controls=true
-        newTitulo.classList.add("text-white")
+        newTitulo.classList.add("text-white","font-[Raleway]","text-xl")
         newTitulo.textContent=informacion[index].trackName
         newImg.src=informacion[index].artworkUrl100
         newAudio.src=informacion[index].previewUrl

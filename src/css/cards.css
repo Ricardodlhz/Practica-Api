@@ -6,17 +6,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     color: white;
-    width: 60%;
-   
+    width: 500px;
+    height: 500px;
 }
 
 .imagen{
-    width: 70%;
+    width: 100%;
+    height: 300px;
     border-radius: 0.3rem;
 }
 .titulo{
+    text-align: center;
     font-size: 2rem;
     font-family: Raleway;
 }

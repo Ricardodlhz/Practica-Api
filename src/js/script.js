@@ -4,6 +4,7 @@ const ticketMasterApiKey="T6MA2HQ4qpcEsWlYWKr8MR3Ux9mDOMQ4"
 let llamarModal=document.getElementById("llamarModal")
 let ventanaModal=document.getElementById("modal")
 let main=document.getElementById("containerConciertos")
+let containerDeportes=document.getElementById("containerDeportes")
 let valueArtista=document.getElementById("nombreArtista")
 let enviar=document.getElementById("enviar")
 let cerrar=document.getElementById("cerrar")
@@ -60,8 +61,7 @@ const crearElementos=(evento)=>{
     newArticle.append(newImg)
     newArticle.append(newA)
     newArticle.append(newP)
-    fragment.appendChild(newArticle)
-    main.appendChild(fragment)
+    return fragment.appendChild(newArticle)
 }
 //Función para cargar los eventos en el index.html
 const listarEventosIndex=async()=>{
@@ -72,27 +72,18 @@ const listarEventosIndex=async()=>{
     const arrayEventosDeportes=cargarDeportes._embedded.events
     //Mostramos los Eventos de Musica en Madrid
     for (let evento = 0; evento < 5; evento++) {
-       crearElementos(arrayEventos[evento])
+       main.append(crearElementos(arrayEventos[evento]))
     }
     
     //  console.log(cargaIndex)
-    console.log(cargarDeportes)
+    // console.log(cargarDeportes)
     //Mostramos los Eventos de Deportes
     for (let evento = 0; evento < 5; evento++) {
-        crearElementos(arrayEventosDeportes[evento])
+        containerDeportes.append(crearElementos(arrayEventosDeportes[evento]))
      }
 }
 
-//Función para mostrar los datos por pantalla de la api de un artisto en concreto
-const listarEventoArtista=async(event)=>{
-    if(event.target.nodeName=="BUTTON"){
-        let nombreArtista=artista.value
-        const info=await peticionApiTicketMasterArtista(nombreArtista)
-        console.log(info._embedded.events)
-        const itunes=await peticionItunes(info._embedded.events[0].name)
-        console.log(itunes)
-    }
-}
+
 //Función para hacer aparecer la ventana modal
 const llamarventanaModal=(event)=>{
     if(event.target.nodeName=="I"){
