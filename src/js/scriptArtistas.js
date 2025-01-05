@@ -1,6 +1,8 @@
 //Vars
 let tituloArtista=document.getElementById("tituloArtista")
 let containerInformacion=document.getElementById("containerInformacion")  
+let arrArtistas=[]
+import { Artista } from "./artista.js"
 //Functions
 //Funcion que nos devuelve información de la api de Itunes.
 const peticionItunes=async(nombreArtista)=>{
@@ -15,7 +17,22 @@ const cargartituloArtista=async()=>{
     tituloArtista.textContent=nombre
    let itunes=await peticionItunes(nombre)
    let informacion=itunes.results
-  
+   let artista=new Artista(nombre,informacion[0].country,informacion[0].primaryGenreName)
+   arrArtistas.push(artista)
+   localStorage.setItem("artistaObjeto",JSON.stringify(artista))
+   
+   const historial=JSON.parse(localStorage.getItem("historial"))
+   const artist=JSON.parse(localStorage.getItem("artistaObjeto"))
+   if(historial){
+   //añadimos el artista al historial
+   historial.push(artist)
+
+   //Añadimos al localStorage
+   localStorage.setItem("historial",JSON.stringify(historial))
+   }else{
+    localStorage.setItem("historial",JSON.stringify(arrArtistas))
+   }
+   
     for (let index = 0; index < 12; index++) {
         let newDiv=document.createElement("DIV")
         newDiv.classList.add("flex","items-center","flex-col","justify-end","gap-4","w-[300px]","h-[300px]")
@@ -36,8 +53,10 @@ const cargartituloArtista=async()=>{
         fragment.append(newDiv)
     }
     console.log(itunes.results)
+    
     containerInformacion.append(fragment)
 }
+
 
 //Listener
 document.addEventListener("DOMContentLoaded",cargartituloArtista)

@@ -9,10 +9,8 @@ let valueArtista=document.getElementById("nombreArtista")
 let enviar=document.getElementById("enviar")
 let cerrar=document.getElementById("cerrar")
 let img=document.getElementById("img")
-//Take images by id
-// const api=await fetch("https://app.ticketmaster.com/discovery/v2/events/Z698xZ8KZ17uko9/images?apikey="+ticketMasterApiKey)
-
-//Function
+let rayitasModal=document.getElementById("rayitasModal")
+//Functions
 
 //Funcion para recoger la información de los eventos que dará un artista introducido por parametro.
 const peticionApiTicketMasterArtista=async(nombreArtista)=>{
@@ -110,5 +108,6 @@ const buscarArtista=(event)=>{
 //Listeners
 document.addEventListener("DOMContentLoaded",listarEventosIndex)
 llamarModal.addEventListener("click",llamarventanaModal)
+rayitasModal.addEventListener("click",llamarventanaModal)
 cerrar.addEventListener("click",cerrarModal)
 enviar.addEventListener("click",buscarArtista)
