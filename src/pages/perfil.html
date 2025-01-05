@@ -12,7 +12,7 @@
     <link rel="shortcut icon" href="./../assets/images/favicoin.png" type="image/x-icon">
     <title>Eventos</title>
 </head>
-<body class="bg-[#070A1B] gap-8 grid grid-rows-[auto_1fr_auto]">
+<body class="bg-[#070A1B] gap-8 grid grid-rows-[auto_1fr_auto] text-white">
     <!-- Header -->
     <header class=" flex items-center justify-evenly  w-full bg-[#070A1B] h-[100px] ">
         <a href="./../index.html"><h1 class="text-white font-[Raleway] text-3xl hover:cursor-pointer">Tickets Events</h1></a>
@@ -34,17 +34,15 @@
 
    
     <!-- Main -->
-    <main class="container mx-auto  " >
-        <div class="flex gap-2 flex-wrap p"> 
-            <h2 class="titulo text-white sm:text-nowra"id="conciertos" >Aquí tienes la informacion del artista</h2>
-            <h2 class="titulo text-white" id="tituloArtista"></h2>
+    <main class="container mx-auto text-xl">
+        <h1 class="text-white font-[Raleway] text-3xl">Este es tu historial de Búsqueda</h1>
+        <div class="container" id="containerHistorial">
+
         </div>
-        <div class="mx-auto  mt-4 mb-4 flex  flex-wrap items-center justify-center gap-10" id="containerInformacion"></div>
-        
     </main>
     
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="bg-gray-800 text-white py-8 fixed bottom-0 w-full">
         <div class="container mx-auto flex justify-center gap-8">
             
             <div class="w-[20%]">
@@ -85,5 +83,5 @@
     
 </body>
 
-<script src="./../js/scriptArtistas.js" type="module"></script>
+<script src="./../js/scriptPerfil.js" ></script>
 </html>

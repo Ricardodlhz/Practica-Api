@@ -10,6 +10,7 @@ let enviar=document.getElementById("enviar")
 let cerrar=document.getElementById("cerrar")
 let img=document.getElementById("img")
 let rayitasModal=document.getElementById("rayitasModal")
+let perfil=document.getElementById("perfil")
 //Functions
 
 //Funcion para recoger la información de los eventos que dará un artista introducido por parametro.
@@ -105,9 +106,17 @@ const buscarArtista=(event)=>{
     }
    
 }
+
+//Funcion para cargar el perfil
+const cargarPerfil=(event)=>{
+    if(event.target.nodeName=="I"){
+        location.href="./pages/perfil.html"
+    }
+}
 //Listeners
 document.addEventListener("DOMContentLoaded",listarEventosIndex)
 llamarModal.addEventListener("click",llamarventanaModal)
 rayitasModal.addEventListener("click",llamarventanaModal)
 cerrar.addEventListener("click",cerrarModal)
 enviar.addEventListener("click",buscarArtista)
+perfil.addEventListener("click",cargarPerfil)

@@ -1,4 +1,5 @@
 //Vars
+let perfil=document.getElementById("perfil")
 let tituloArtista=document.getElementById("tituloArtista")
 let containerInformacion=document.getElementById("containerInformacion")  
 let arrArtistas=[]
@@ -12,7 +13,7 @@ const peticionItunes=async(nombreArtista)=>{
 }
 
 let fragment=document.createDocumentFragment()
-const cargartituloArtista=async()=>{
+const cargarArtistas=async()=>{
     let nombre=JSON.parse(localStorage.getItem("artista"))
     tituloArtista.textContent=nombre
    let itunes=await peticionItunes(nombre)
@@ -57,6 +58,11 @@ const cargartituloArtista=async()=>{
     containerInformacion.append(fragment)
 }
 
-
+const cargarPerfil=(event)=>{
+    if(event.target.nodeName=="I"){
+        location.href="./perfil.html"
+    }
+}
 //Listener
-document.addEventListener("DOMContentLoaded",cargartituloArtista)
+document.addEventListener("DOMContentLoaded",cargarArtistas)
+perfil.addEventListener("click",cargarPerfil)
